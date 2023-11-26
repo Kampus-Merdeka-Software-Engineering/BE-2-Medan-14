@@ -70,6 +70,8 @@ DB_NAME=bookid_db
 SESSION_SECRET=your_secret
 ```
 
+Make sure install dependencies by running this.
+
 ```bash
 npm i
 ```
