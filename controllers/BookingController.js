@@ -131,6 +131,7 @@ export const createBooking = async (req, res) => {
             totalRoom: totalRoom,
             totalPrice: totalRoom * room.currentPrice * diffDays,
             status: "Pending",
+            review: "null",
         });
 
         await Rooms.update(

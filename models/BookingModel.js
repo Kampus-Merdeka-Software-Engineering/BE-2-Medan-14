@@ -203,7 +203,6 @@ const Bookings = db.define(
                     msg: "Review must not be empty",
                 },
             },
-            defaultValue: "Not yet reviewed",
         },
     },
     {

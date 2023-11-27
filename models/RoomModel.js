@@ -60,63 +60,6 @@ const Rooms = db.define(
                     msg: "Description must not be empty",
                 },
             },
-            defaultValue: `
-                1. Tujuan/Fungsi Kamar:
-                [Deskripsikan tujuan utama atau fungsi kamar, misalnya kamar tidur, suite eksekutif, atau kamar konferensi]
-                
-                2. Dimensi:
-                Panjang: [Masukkan panjang dalam faki/meter]
-                Lebar: [Masukkan lebar dalam faki/meter]
-                Tinggi: [Masukkan tinggi dalam faki/meter]
-                
-                3. Kapasitas dan Tipe Tempat Tidur:
-                Jumlah Tamu yang Dapat Diakomodasi: [Misalnya, dua dewasa dan satu anak]
-                Tipe Tempat Tidur: [Misalnya, king-size bed, twin beds]
-                
-                4. Skema Warna dan Desain:
-                [Deskripsikan skema warna dominan dan desain interior kamar]
-                
-                5. Pencahayaan:
-                Sumber Cahaya Alami: [Deskripsikan jendela atau sumber cahaya alami]
-                Pencahayaan Buatan: [Jelaskan jenis pencahayaan buatan, misalnya lampu langit-langit, lampu tidur]
-                
-                6. Fasilitas Kamar:
-                Kamar Mandi Pribadi: [Ya/Tidak]
-                AC/Heater: [Ya/Tidak]
-                TV: [Ukuran dan jenis]
-                Minibar: [Ya/Tidak]
-                Meja Kerja: [Ya/Tidak]
-                Wi-Fi: [Ya/Tidak]
-                
-                7. Perabotan:
-                Tempat Duduk: [Misalnya, sofa atau kursi]
-                Meja: [Meja kerja atau meja samping tempat tidur]
-                Lemari Pakaian: [Jumlah dan jenis]
-                
-                8. Pemandangan dan Lokasi:
-                [Deskripsikan pemandangan dari jendela, jika ada]
-                Lokasi Kamar: [Misalnya, lantai tinggi, dekat lift]
-                
-                9. Keamanan:
-                Pintu dengan Kunci Elektronik: [Ya/Tidak]
-                Brankas Pribadi: [Ya/Tidak]
-                
-                10. Layanan Tambahan:
-                Layanan Kamar 24 Jam: [Ya/Tidak]
-                Layanan Pembersihan Harian: [Ya/Tidak]
-                Sarapan: [Ya/Tidak]
-                
-                11. Dekorasi dan Aksesori:
-                Dekorasi Dinding: [Misalnya, seni lokal atau gambar]
-                Aksesori: [Misalnya, lampu hias, tirai elegan]
-                
-                12. Fitur Khusus:
-                Jacuzzi atau Bak Mandi Besar: [Ya/Tidak]
-                Balkon Pribadi: [Ya/Tidak]
-                
-                13. Catatan Khusus:
-                [Sertakan catatan khusus atau informasi tambahan yang perlu dicatat]
-                `,
         },
         regency: {
             type: DataTypes.STRING,

@@ -31,7 +31,7 @@ dotenv.config();
 // Sync database, disable force true to prevent table drop
 // comment after first run
 (async () => {
-    await db.sync({ alter: true });
+    await db.sync();
 
     // Check if admin exists
     const admin = await Users.findOne({ where: { email: process.env.ADMIN_EMAIL } });
