@@ -70,9 +70,7 @@ app.use(express.urlencoded({ limit: "5mb", extended: true }));
 app.use(
     cors({
         credentials: true,
-        origin: (origin, callback) => {
-            callback(null, true);
-        },
+        origin: "https://kampus-merdeka-software-engineering.github.io",
     })
 );
 
