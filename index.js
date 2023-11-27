@@ -58,7 +58,7 @@ app.use(
         store: store,
         cookie: {
             sameSite: "none", // must be 'none' to enable cross-site delivery
-            secure: true, // must be true if sameSite='none'
+            secure: false, // must be true if sameSite='none'
             httpOnly: true,
         },
     })
