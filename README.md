@@ -61,13 +61,20 @@ npm install
 Make sure to set up your environment variables by creating a `.env` file in the root directory. You can use the provided `.env.example` as a template.
 
 ```env
-PORT=5000
-HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=bookid_db
-SESSION_SECRET=your_secret
+PORT = 5000
+SESSION_SECRET = yourSecret
+HOST = localhost/yourHost
+CLIENT_URL = https://yourClientUrl
+DATABASE_URL = yourDbUrl
+ADMIN_NAME = yourAdminName
+ADMIN_EMAIL = yourAdminGmail@mail.co
+ADMIN_PASSWORD = yourAdminPassword
+ADMIN_PHONE = yourAdminPhone
+ADMIN_PHOTO = yourAdminPhoto
+DB_PORT = 3306
+DB_USER = root
+DB_PASSWORD = your_password
+DB_NAME = bookid_db
 ```
 
 Make sure install dependencies by running this.
