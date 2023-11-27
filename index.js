@@ -66,7 +66,9 @@ app.use(express.urlencoded({ limit: "5mb", extended: true }));
 app.use(
     cors({
         credentials: true,
-        origin: "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/",
+        origin: (origin, callback) => {
+            callback(null, true);
+        },
     })
 );
 
