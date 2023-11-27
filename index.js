@@ -8,7 +8,7 @@ import SequelizeStore from "connect-session-sequelize";
 import argon2 from "argon2";
 
 import { updateBookingStatus } from "./utils/updateBookingStatus.js";
-import { Users } from "./models/User.js";
+import Users from "./models/UserModel.js";
 
 import BookingRoute from "./routes/BookingRoute.js";
 import PhotoRoute from "./routes/PhotoRoute.js";
