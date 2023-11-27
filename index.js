@@ -20,7 +20,6 @@ import RoomReviewRoute from "./routes/RoomReviewRoute.js";
 cron.schedule("* * * * *", updateBookingStatus);
 
 const app = express();
-const port = process.env.PORT || 5000;
 const sessionStore = SequelizeStore(session.Store);
 const store = new sessionStore({
     db: db,
@@ -84,6 +83,6 @@ app.use(RoomReviewRoute);
 
 store.sync();
 
-app.listen(port, "0.0.0.0", () => {
-    console.log(`Server up and running on port: ${port}`);
+app.listen(process.env.PORT, "0.0.0.0", () => {
+    console.log(`Server up and running on port: ${process.env.PORT}`);
 });
