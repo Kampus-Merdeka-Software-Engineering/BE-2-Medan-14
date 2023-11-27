@@ -40,7 +40,7 @@ dotenv.config();
     if (!admin) {
         const hashedPassword = await argon2.hash(process.env.ADMIN_PASSWORD);
         await Users.create({
-            name: "Admin",
+            name: process.env.ADMIN_NAME,
             phone: process.env.ADMIN_PHONE,
             email: process.env.ADMIN_EMAIL,
             password: hashedPassword,
@@ -55,7 +55,7 @@ app.use(
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
-        proxy: true,
+        proxy: true, // add this when behind a reverse proxy, if you need secure cookies
         store: store,
         cookie: {
             sameSite: "none", // must be 'none' to enable cross-site delivery
