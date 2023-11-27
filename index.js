@@ -66,7 +66,9 @@ app.use(express.urlencoded({ limit: "5mb", extended: true }));
 app.use(
     cors({
         credentials: true,
-        origin: "*",
+        origin: (origin, callback) => {
+            callback(null, true);
+        },
     })
 );
 
