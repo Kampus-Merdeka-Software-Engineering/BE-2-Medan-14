@@ -55,10 +55,11 @@ app.use(
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
+        proxy: true,
         store: store,
         cookie: {
             sameSite: "none", // must be 'none' to enable cross-site delivery
-            secure: process.env.NODE_ENV === "production", // must be true if sameSite='none'
+            secure: true, // must be true if sameSite='none'
             httpOnly: true,
         },
     })
