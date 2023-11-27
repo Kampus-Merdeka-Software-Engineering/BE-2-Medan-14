@@ -45,6 +45,7 @@ dotenv.config();
             email: process.env.ADMIN_EMAIL,
             password: hashedPassword,
             role: "Admin",
+            photo: process.env.ADMIN_PHOTO,
         });
     }
 })();
