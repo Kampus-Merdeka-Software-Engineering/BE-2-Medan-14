@@ -71,10 +71,6 @@ ADMIN_EMAIL = yourAdminGmail@mail.co
 ADMIN_PASSWORD = yourAdminPassword
 ADMIN_PHONE = yourAdminPhone
 ADMIN_PHOTO = yourAdminPhoto
-DB_PORT = 3306
-DB_USER = root
-DB_PASSWORD = your_password
-DB_NAME = bookid_db
 ```
 
 Make sure install dependencies by running this.
