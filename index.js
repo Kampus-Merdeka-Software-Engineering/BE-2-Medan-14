@@ -56,7 +56,11 @@ app.use(
         resave: false,
         saveUninitialized: true,
         store: store,
-        cookie: { secure: "auto" },
+        cookie: {
+            sameSite: "none", // must be 'none' to enable cross-site delivery
+            secure: true, // must be true if sameSite='none'
+            httpOnly: true,
+        },
     })
 );
 
