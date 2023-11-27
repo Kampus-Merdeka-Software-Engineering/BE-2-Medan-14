@@ -5,8 +5,10 @@ import dotenv from "dotenv";
 import cron from "node-cron";
 import db from "./config/Database.js";
 import SequelizeStore from "connect-session-sequelize";
+import argon2 from "argon2";
 
 import { updateBookingStatus } from "./utils/updateBookingStatus.js";
+import { Users } from "./models/User.js";
 
 import BookingRoute from "./routes/BookingRoute.js";
 import PhotoRoute from "./routes/PhotoRoute.js";
@@ -29,7 +31,21 @@ dotenv.config();
 // Sync database, disable force true to prevent table drop
 // comment after first run
 (async () => {
-    await db.sync();
+    await db.sync({ alter: true });
+
+    // Check if admin exists
+    const admin = await Users.findOne({ where: { email: process.env.ADMIN_EMAIL } });
+
+    // If admin does not exist, create it
+    if (!admin) {
+        const hashedPassword = await argon2.hash(process.env.ADMIN_PASSWORD);
+        await Users.create({
+            name: "Admin",
+            email: process.env.ADMIN_EMAIL,
+            password: hashedPassword,
+            role: "Admin",
+        });
+    }
 })();
 
 app.use(
