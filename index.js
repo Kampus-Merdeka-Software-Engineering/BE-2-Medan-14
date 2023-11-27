@@ -41,6 +41,7 @@ dotenv.config();
         const hashedPassword = await argon2.hash(process.env.ADMIN_PASSWORD);
         await Users.create({
             name: "Admin",
+            phone: process.env.ADMIN_PHONE,
             email: process.env.ADMIN_EMAIL,
             password: hashedPassword,
             role: "Admin",
