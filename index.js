@@ -26,6 +26,8 @@ const store = new sessionStore({
 
 dotenv.config();
 
+// Sync database, disable force true to prevent table drop
+// comment after first run
 (async () => {
     await db.sync();
 })();
