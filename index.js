@@ -56,12 +56,7 @@ app.use(
         resave: false,
         saveUninitialized: true,
         store: store,
-        cookie: {
-            sameSite: "none", // must be 'none' to enable cross-site delivery
-            secure: false, // must be true if sameSite='none'
-            httpOnly: true, // should be true for most scenarios
-            maxAge: 24 * 60 * 60 * 1000, // 24 hours
-        },
+        cookie: { secure: "auto" },
     })
 );
 
@@ -71,9 +66,7 @@ app.use(express.urlencoded({ limit: "5mb", extended: true }));
 app.use(
     cors({
         credentials: true,
-        origin: (origin, callback) => {
-            callback(null, true);
-        },
+        origin: "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/",
     })
 );
 
