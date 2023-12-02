@@ -68,7 +68,9 @@ export const createRoom = async (req, res) => {
 
         res.status(201).json({ msg: "Room created successfully" });
     } catch (error) {
-        res.status(400).json({ msg: error.message });
+        const messages = error.message.split("\n").map((msg) => msg.replace("Validation error: ", ""));
+        const singleMessage = messages.join(" ");
+        res.status(400).json({ msg: singleMessage });
     }
 };
 
@@ -120,7 +122,9 @@ export const updateRoom = async (req, res) => {
 
         res.status(200).json({ msg: "Room updated successfully" });
     } catch (error) {
-        res.status(400).json({ msg: error.message });
+        const messages = error.message.split("\n").map((msg) => msg.replace("Validation error: ", ""));
+        const singleMessage = messages.join(" ");
+        res.status(400).json({ msg: singleMessage });
     }
 };
 

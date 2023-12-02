@@ -80,7 +80,9 @@ export const Register = async (req, res) => {
         });
         res.status(201).json({ msg: "User registered successfully" });
     } catch (error) {
-        res.status(400).json({ msg: error.message });
+        const messages = error.message.split("\n").map((msg) => msg.replace("Validation error: ", ""));
+        const singleMessage = messages.join(" ");
+        res.status(400).json({ msg: singleMessage });
     }
 };
 
@@ -142,7 +144,9 @@ export const UpdateProfile = async (req, res) => {
         );
         res.status(200).json({ msg: "User updated successfully" });
     } catch (error) {
-        res.status(400).json({ msg: error.message });
+        const messages = error.message.split("\n").map((msg) => msg.replace("Validation error: ", ""));
+        const singleMessage = messages.join(" ");
+        res.status(400).json({ msg: singleMessage });
     }
 };
 

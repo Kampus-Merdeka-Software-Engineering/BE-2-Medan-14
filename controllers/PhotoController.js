@@ -45,7 +45,9 @@ export const createPhoto = async (req, res) => {
 
         res.status(201).json({ msg: "Photo created successfully" });
     } catch (error) {
-        res.status(400).json({ msg: error.message });
+        const messages = error.message.split("\n").map((msg) => msg.replace("Validation error: ", ""));
+        const singleMessage = messages.join(" ");
+        res.status(400).json({ msg: singleMessage });
     }
 };
 
@@ -77,7 +79,9 @@ export const updatePhoto = async (req, res) => {
 
         res.status(200).json({ msg: "Photo updated successfully" });
     } catch (error) {
-        res.status(400).json({ msg: error.message });
+        const messages = error.message.split("\n").map((msg) => msg.replace("Validation error: ", ""));
+        const singleMessage = messages.join(" ");
+        res.status(400).json({ msg: singleMessage });
     }
 };
 
