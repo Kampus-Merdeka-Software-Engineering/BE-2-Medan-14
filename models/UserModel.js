@@ -104,7 +104,7 @@ const Users = db.define(
                 sizeMustLessThan2MB(value) {
                     let byteSize = (value.length * 3) / 4;
 
-                    if (byteSize > 2000000) {
+                    if (byteSize > 2500000) {
                         throw new Error("Photo must be less than 2MB");
                     }
                 },
