@@ -163,3 +163,31 @@ export const Logout = async (req, res) => {
         res.status(200).json({ msg: "Logout successfully" });
     });
 };
+
+export const UniqueEmail = async (req, res) => {
+    const { email } = req.body;
+
+    if (!email) {
+        return res.status(400).json({ msg: "Please enter email" });
+    }
+
+    const user = await Users.findOne({ where: { email } });
+    if (user) {
+        return res.status(400).json({ msg: "Email already exists" });
+    }
+    res.status(200).json({ msg: "Email is available" });
+};
+
+export const UniquePhone = async (req, res) => {
+    const { phone } = req.body;
+
+    if (!phone) {
+        return res.status(400).json({ msg: "Please enter phone number" });
+    }
+
+    const user = await Users.findOne({ where: { phone } });
+    if (user) {
+        return res.status(400).json({ msg: "Phone number already exists" });
+    }
+    res.status(200).json({ msg: "Phone number is available" });
+};
