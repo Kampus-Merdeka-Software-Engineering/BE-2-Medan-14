@@ -8,7 +8,7 @@ router.post("/login", Login);
 router.post("/register", Register);
 router.patch("/update-profile", UpdateProfile);
 router.delete("/logout", Logout);
-router.get("/check-email", UniqueEmail);
-router.get("/check-phone", UniquePhone);
+router.post("/check-email", UniqueEmail);
+router.post("/check-phone", UniquePhone);
 
 export default router;
