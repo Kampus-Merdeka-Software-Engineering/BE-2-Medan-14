@@ -1,5 +1,4 @@
 import { Sequelize } from "sequelize";
-import Op from "sequelize";
 import db from "../config/Database.js";
 import Rooms from "./RoomModel.js";
 import Users from "./UserModel.js";

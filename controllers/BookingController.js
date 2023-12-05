@@ -1,6 +1,7 @@
 import Bookings from "../models/BookingModel.js";
 import Rooms from "../models/RoomModel.js";
 import Users from "../models/UserModel.js";
+import Photos from "../models/PhotoModel.js";
 import sequelize from "sequelize";
 
 export const getBookings = async (req, res) => {
