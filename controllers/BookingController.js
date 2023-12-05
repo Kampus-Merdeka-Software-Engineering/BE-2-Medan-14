@@ -17,12 +17,11 @@ export const getBookings = async (req, res) => {
                     {
                         model: Rooms,
                         required: true,
-                        attributes: {
-                            exclude: ["createdAt", "updatedAt"],
-                        },
+                        attributes: ["id", "name", "currentPrice"],
                         include: {
                             model: Photos,
                             attributes: ["photo"],
+                            limit: 1,
                         },
                     },
                     {
@@ -45,12 +44,11 @@ export const getBookings = async (req, res) => {
                 include: {
                     model: Rooms,
                     required: true,
-                    attributes: {
-                        exclude: ["createdAt", "updatedAt"],
-                    },
+                    attributes: ["id", "name", "currentPrice"],
                     include: {
                         model: Photos,
                         attributes: ["photo"],
+                        limit: 1,
                     },
                 },
             });
@@ -78,12 +76,11 @@ export const getBookingById = async (req, res) => {
                     {
                         model: Rooms,
                         required: true,
-                        attributes: {
-                            exclude: ["createdAt", "updatedAt"],
-                        },
+                        attributes: ["id", "name", "currentPrice"],
                         include: {
                             model: Photos,
                             attributes: ["photo"],
+                            limit: 1,
                         },
                     },
                     {
@@ -107,12 +104,11 @@ export const getBookingById = async (req, res) => {
                 include: {
                     model: Rooms,
                     required: true,
-                    attributes: {
-                        exclude: ["createdAt", "updatedAt"],
-                    },
+                    attributes: ["id", "name", "currentPrice"],
                     include: {
                         model: Photos,
                         attributes: ["photo"],
+                        limit: 1,
                     },
                 },
             });
