@@ -10,7 +10,7 @@ export const getRoomReviews = async (req, res) => {
                 {
                     model: Bookings,
                     required: true,
-                    attributes: ["id", "rating", "review"],
+                    attributes: ["id", "rating", "review", "updatedAt"],
                     include: [
                         {
                             model: Users,
@@ -39,7 +39,7 @@ export const getRoomReviewById = async (req, res) => {
                 {
                     model: Bookings,
                     required: true,
-                    attributes: ["id", "rating", "review"],
+                    attributes: ["id", "rating", "review", "updatedAt"],
                     include: [
                         {
                             model: Users,

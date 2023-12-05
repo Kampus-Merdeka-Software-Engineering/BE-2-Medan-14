@@ -16,7 +16,13 @@ export const getBookings = async (req, res) => {
                     {
                         model: Rooms,
                         required: true,
-                        attributes: ["id", "name", "category", "description", "regency", "currentPrice", "avgRating"],
+                        attributes: {
+                            exclude: ["createdAt", "updatedAt"],
+                        },
+                        include: {
+                            model: Photos,
+                            attributes: ["photo"],
+                        },
                     },
                     {
                         model: Users,
@@ -38,7 +44,13 @@ export const getBookings = async (req, res) => {
                 include: {
                     model: Rooms,
                     required: true,
-                    attributes: ["id", "name", "category", "description", "regency", "currentPrice", "avgRating"],
+                    attributes: {
+                        exclude: ["createdAt", "updatedAt"],
+                    },
+                    include: {
+                        model: Photos,
+                        attributes: ["photo"],
+                    },
                 },
             });
         }
@@ -65,7 +77,13 @@ export const getBookingById = async (req, res) => {
                     {
                         model: Rooms,
                         required: true,
-                        attributes: ["id", "name", "category", "description", "regency", "currentPrice", "avgRating"],
+                        attributes: {
+                            exclude: ["createdAt", "updatedAt"],
+                        },
+                        include: {
+                            model: Photos,
+                            attributes: ["photo"],
+                        },
                     },
                     {
                         model: Users,
@@ -88,7 +106,13 @@ export const getBookingById = async (req, res) => {
                 include: {
                     model: Rooms,
                     required: true,
-                    attributes: ["id", "name", "category", "description", "regency", "currentPrice", "avgRating"],
+                    attributes: {
+                        exclude: ["createdAt", "updatedAt"],
+                    },
+                    include: {
+                        model: Photos,
+                        attributes: ["photo"],
+                    },
                 },
             });
         }
