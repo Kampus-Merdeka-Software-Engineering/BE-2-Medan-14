@@ -10,9 +10,6 @@ export const getBookings = async (req, res) => {
 
         if (req.role === "Admin") {
             response = await Bookings.findAll({
-                attributes: {
-                    exclude: ["createdAt", "updatedAt"],
-                },
                 include: [
                     {
                         model: Rooms,
@@ -37,9 +34,6 @@ export const getBookings = async (req, res) => {
             response = await Bookings.findAll({
                 where: {
                     userId: req.userId,
-                },
-                attributes: {
-                    exclude: ["createdAt", "updatedAt"],
                 },
                 include: {
                     model: Rooms,
@@ -69,9 +63,6 @@ export const getBookingById = async (req, res) => {
                 where: {
                     id: req.params.id,
                 },
-                attributes: {
-                    exclude: ["createdAt", "updatedAt"],
-                },
                 include: [
                     {
                         model: Rooms,
@@ -97,9 +88,6 @@ export const getBookingById = async (req, res) => {
                 where: {
                     id: req.params.id,
                     userId: req.userId,
-                },
-                attributes: {
-                    exclude: ["createdAt", "updatedAt"],
                 },
                 include: {
                     model: Rooms,

@@ -3,6 +3,9 @@ import { Login, Me, Register, UpdateProfile, Logout, UniqueEmail, UniquePhone } 
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+    res.redirect("https://github.com/Kampus-Merdeka-Software-Engineering/BE-2-Medan-14");
+});
 router.get("/me", Me);
 router.post("/login", Login);
 router.post("/register", Register);
