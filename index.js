@@ -27,27 +27,27 @@ const store = new sessionStore({
 
 dotenv.config();
 
-// Sync database, disable force true to prevent table drop
-// comment after first run
-(async () => {
-    await db.sync();
+// // Sync database, disable force true to prevent table drop
+// // comment after first run
+// (async () => {
+//     await db.sync();
 
-    // Check if admin exists
-    const admin = await Users.findOne({ where: { email: process.env.ADMIN_EMAIL } });
+//     // Check if admin exists
+//     const admin = await Users.findOne({ where: { email: process.env.ADMIN_EMAIL } });
 
-    // If admin does not exist, create it
-    if (!admin) {
-        const hashedPassword = await argon2.hash(process.env.ADMIN_PASSWORD);
-        await Users.create({
-            name: process.env.ADMIN_NAME,
-            phone: process.env.ADMIN_PHONE,
-            email: process.env.ADMIN_EMAIL,
-            password: hashedPassword,
-            role: "Admin",
-            photo: process.env.ADMIN_PHOTO,
-        });
-    }
-})();
+//     // If admin does not exist, create it
+//     if (!admin) {
+//         const hashedPassword = await argon2.hash(process.env.ADMIN_PASSWORD);
+//         await Users.create({
+//             name: process.env.ADMIN_NAME,
+//             phone: process.env.ADMIN_PHONE,
+//             email: process.env.ADMIN_EMAIL,
+//             password: hashedPassword,
+//             role: "Admin",
+//             photo: process.env.ADMIN_PHOTO,
+//         });
+//     }
+// })();
 
 app.use(
     session({
