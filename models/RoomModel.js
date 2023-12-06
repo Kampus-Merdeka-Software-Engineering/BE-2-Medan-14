@@ -47,6 +47,96 @@ const Rooms = db.define(
             },
             defaultValue: "Standard Room",
         },
+        bedroom: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    args: true,
+                    msg: "Bedroom must be filled",
+                },
+                notEmpty: {
+                    args: true,
+                    msg: "Bedroom must not be empty",
+                },
+            },
+            defaultValue: "2, Bed sheets, Wardrobe",
+        },
+        bathroom: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    args: true,
+                    msg: "Bathroom must be filled",
+                },
+                notEmpty: {
+                    args: true,
+                    msg: "Bathroom must not be empty",
+                },
+            },
+            defaultValue: "1, Hot water, Shower, Toiletries, Towel, Toilet",
+        },
+        roomSize: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    args: true,
+                    msg: "Room size must be filled",
+                },
+                notEmpty: {
+                    args: true,
+                    msg: "Room size must not be empty",
+                },
+            },
+            defaultValue: "8 m²",
+        },
+        mediaTech: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    args: true,
+                    msg: "Media tech must be filled",
+                },
+                notEmpty: {
+                    args: true,
+                    msg: "Media tech must not be empty",
+                },
+            },
+            defaultValue: "Free WiFi, TV, Telephone",
+        },
+        kitchen: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    args: true,
+                    msg: "Kitchen must be filled",
+                },
+                notEmpty: {
+                    args: true,
+                    msg: "Kitchen must not be empty",
+                },
+            },
+            defaultValue: "Electric kettle, Refrigerator, Oven, Microwave",
+        },
+        service: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    args: true,
+                    msg: "Service must be filled",
+                },
+                notEmpty: {
+                    args: true,
+                    msg: "Service must not be empty",
+                },
+            },
+            defaultValue: "Room service, Daily cleaning service, Laundry, Luggage storage, Wake-up service",
+        },
         description: {
             type: DataTypes.TEXT,
             allowNull: false,
@@ -60,36 +150,6 @@ const Rooms = db.define(
                     msg: "Description must not be empty",
                 },
             },
-        },
-        regency: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notNull: {
-                    args: true,
-                    msg: "Regency must be filled",
-                },
-                notEmpty: {
-                    args: true,
-                    msg: "Regency must not be empty",
-                },
-            },
-            defaultValue: "Jakarta Pusat",
-        },
-        province: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notNull: {
-                    args: true,
-                    msg: "Province must be filled",
-                },
-                notEmpty: {
-                    args: true,
-                    msg: "Province must not be empty",
-                },
-            },
-            defaultValue: "DKI Jakarta",
         },
         roomQty: {
             type: DataTypes.INTEGER,

@@ -38,7 +38,7 @@ export const getRoomById = async (req, res) => {
 };
 
 export const createRoom = async (req, res) => {
-    const { name, category, description, regency, province, roomQty, discount, normalPrice } = req.body;
+    const { name, category, bedroom, bathroom, roomSize, mediaTech, kitchen, service, description, roomQty, discount, normalPrice } = req.body;
     let curDiscount, curNormalPrice;
 
     if (discount === undefined) {
@@ -57,9 +57,13 @@ export const createRoom = async (req, res) => {
         await Rooms.create({
             name: name,
             category: category,
+            bedroom: bedroom,
+            bathroom: bathroom,
+            roomSize: roomSize,
+            mediaTech: mediaTech,
+            kitchen: kitchen,
+            service: service,
             description: description,
-            regency: regency,
-            province: province,
             roomQty: roomQty,
             discount: curDiscount,
             normalPrice: curNormalPrice,
@@ -85,7 +89,7 @@ export const updateRoom = async (req, res) => {
         return res.status(404).json({ msg: "Room not found" });
     }
 
-    const { name, category, description, regency, province, roomQty, discount, normalPrice } = req.body;
+    const { name, category, bedroom, bathroom, roomSize, mediaTech, kitchen, service, description, roomQty, discount, normalPrice } = req.body;
     let curDiscount, curNormalPrice;
 
     if (discount === undefined) {
@@ -105,9 +109,13 @@ export const updateRoom = async (req, res) => {
             {
                 name: name,
                 category: category,
+                bedroom: bedroom,
+                bathroom: bathroom,
+                roomSize: roomSize,
+                mediaTech: mediaTech,
+                kitchen: kitchen,
+                service: service,
                 description: description,
-                regency: regency,
-                province: province,
                 roomQty: roomQty,
                 discount: curDiscount,
                 normalPrice: curNormalPrice,
