@@ -7,6 +7,7 @@ export const getRooms = async (req, res) => {
             include: {
                 model: Photos,
                 attributes: ["photo"],
+                limit: 1,
             },
         });
         res.status(200).json(response);
