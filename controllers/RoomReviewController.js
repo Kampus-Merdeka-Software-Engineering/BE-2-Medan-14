@@ -11,6 +11,9 @@ export const getRoomReviews = async (req, res) => {
                     model: Bookings,
                     required: true,
                     attributes: ["id", "rating", "review", "updatedAt"],
+                    where: {
+                        status: "Done",
+                    },
                     include: [
                         {
                             model: Users,
@@ -40,6 +43,9 @@ export const getRoomReviewById = async (req, res) => {
                     model: Bookings,
                     required: true,
                     attributes: ["id", "rating", "review", "updatedAt"],
+                    where: {
+                        status: "Done",
+                    },
                     include: [
                         {
                             model: Users,
