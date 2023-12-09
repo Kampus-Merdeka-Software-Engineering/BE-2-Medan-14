@@ -289,6 +289,10 @@ export const updateBooking = async (req, res) => {
                 return res.status(404).json({ msg: "Room not found" });
             }
 
+            if (totalRoom > room.roomQty + booking.totalRoom) {
+                return res.status(400).json({ msg: "Reserved room must be less than or equal to available room" });
+            }
+
             await Bookings.update(
                 {
                     roomId: room.id,

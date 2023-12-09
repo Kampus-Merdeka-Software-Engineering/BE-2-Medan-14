@@ -120,17 +120,6 @@ const Bookings = db.define(
                         throw new Error("Reserved room must be at least 1");
                     }
                 },
-                mustBeLessThanOrEqualAvailableRoom(value) {
-                    return Rooms.findOne({
-                        where: {
-                            id: this.roomId,
-                        },
-                    }).then((room) => {
-                        if (value > room.roomQty) {
-                            throw new Error("Reserved room must be less than or equal to available room");
-                        }
-                    });
-                },
             },
             defaultValue: 1,
         },
