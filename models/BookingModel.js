@@ -28,8 +28,6 @@ const Bookings = db.define(
                     }).then((room) => {
                         if (!room) {
                             throw new Error("Room id must be exist");
-                        } else if (room.roomQty <= 0) {
-                            throw new Error("Room quantity must be available");
                         }
                     });
                 },
