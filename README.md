@@ -1,6 +1,6 @@
 # BookID Server API - BE-2-Medan-14
 
-Welcome to the documentation for the BookID Server API - the backend for the BookID hotel booking app in Indonesia. This API provides a set of routes to handle user authentication, hotel bookings, photos, room reviews, rooms, and user management.
+Welcome to the documentation for the BookID Server API - the backend for the [BookID](https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14) hotel booking website in Indonesia. This API provides a set of routes to handle user authentication, hotel bookings, photos, room reviews, rooms, and user management.
 
 ## Table of Contents
 
